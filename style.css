@@ -128,11 +128,6 @@ nav img{
     width: 2.5rem;
     cursor: pointer;
     transition: .3s;
-    opacity: .75;
-}
-
-nav img:hover{
-    opacity: 1;
 }
 
 .previous{
