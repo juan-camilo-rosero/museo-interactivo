@@ -10,29 +10,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section id="start-screen">
-        <img src="assets/logo_inicio.png" alt="Museo Interactivo">
+    <section id="first-video">
+        <div class="volume-div">
+            <figure class="volume-btn">
+                <img src="assets/icons/volume.png" alt="Icono volumen" class="volume-icon">
+            </figure>
+            <p class="bold-volume-txt">Haz click en el ícono de sonido</p>
+            <p class="volume-txt">para iniciar la experiencia</p>
+        </div>
+        <video class="first-video" src="assets/videos/primer-video.mp4"></video>
+    </section>
+    <section id="start-screen" class="hidden none">
+        <img src="assets/icons/logo_inicio.png" alt="Museo Interactivo">
         <p>Hanna Sharon Beltrán</p>
         <a class="start-btn"><span>Iniciar</span></a>
     </section>
-    <main>
-        <div class="frames">
-            <div class="frame">
-                <img class="first-frame" src="https://www.medianalisis.org/wp-content/uploads/2021/06/DESINFORMACION-Y-CENSURA.png" alt="foto">
-            </div>
-            <div class="frame">
-                <img class="second-frame" src="https://previews.123rf.com/images/jansucko/jansucko1610/jansucko161000044/65571184-de-cerca-de-cuatro-diferentes-rosas-rojas-de-tama%C3%B1o-en-fondo-gris-con-muchas-peque%C3%B1as-gotas-en-los.jpg" alt="foto">
-            </div>
-        </div>
-        <nav>
-            <img src="assets/flecha.png" alt="Anterior" class="previous gray">
-            <div class="room-div">
-                <div class="room-line"></div>
-                <p class="room">Sala <span class="room-num">1</span></p>
-            </div>
-            <img src="assets/flecha.png" alt="Siguiente" class="next">
-        </nav>
-    </main>
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
 </body>
 </html>

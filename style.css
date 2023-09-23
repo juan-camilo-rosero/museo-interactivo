@@ -23,14 +23,71 @@ p::selection{
     filter: saturate(0);
 }
 
+.volume-div{
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000da;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.volume-btn{
+    width: 12rem;
+    height: 12rem;
+    border-radius: 20rem;
+    border: .2rem solid whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s;
+    opacity: .65;
+}
+
+.volume-btn:hover{
+    opacity: 1;
+}
+
+.volume-icon{
+    width: 40%;
+}
+
+.bold-volume-txt{
+    font-weight: 700;
+    color: whitesmoke;
+    font-size: 2rem;
+    margin-top: 3rem;
+}
+
+.volume-txt{
+    color: whitesmoke;
+    font-size: 2rem;
+    font-weight: 100;
+    margin-top: .75rem;
+}
+
+.first-video {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    transition: .3s;
+}
+
 /*Start screen*/
 
 #start-screen{
     width: 100vw;
     height: 100vh;
-    background-color: var(--white);
+    background-image: url("https://media.istockphoto.com/id/185100559/es/foto/fotos-de-pared-blanco.jpg?s=170667a&w=0&k=20&c=G1hdPja5DgYUO1MweJb7dRp-7C_gBrLmRe0GJQxnz8A=");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     flex-direction: column;
     transition: .5s;
@@ -40,6 +97,7 @@ p::selection{
 
 #start-screen img{
     height: 4rem;
+    margin-top: 8rem;
 }
 
 #start-screen p{
@@ -61,41 +119,11 @@ p::selection{
     position: relative;
     display: inline-block;
     cursor: pointer;
+    transition: .3s;
 }
 
-span {
-    position: relative;
-    z-index: 3;
-}
-
-.start-btn::before{
-    content: "";
-    position: absolute;
-    top: 5px;
-    left: -2px;
-    width: calc(100% + 6px);
-    height: calc(100% - 10px);
-    background-color: #ffffff;
-    transition: all 0.3s ease-in-out;
-    transform: scaleY(1);
-}
-.start-btn::after{
-    content: "";
-    position: absolute;
-    left: 5px;
-    top: -5px;
-    width: calc(100% - 10px);
-    height: calc(100% + 10px);
-    background-color: #ffffff;
-    transition: all 0.3s ease-in-out;
-    transform: scaleX(1);
-}
-
-.start-btn:hover::before{
-    transform: scaleY(0);
-}
-.start-btn:hover::after{
-    transform: scaleX(0);
+.start-btn:hover{
+    padding: .5rem 5rem;
 }
 
 .hidden{
@@ -173,7 +201,7 @@ nav p{
     width: 15rem;
     height: 15rem;
     cursor: pointer;
-    background-image: url(assets/cuadro.png);
+    background-image: url(assets/icons/logo_inicio.png);
     background-size: cover;
     display: flex;
     justify-content: center;

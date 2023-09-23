@@ -1,3 +1,6 @@
+import { appearDiv, dissappearDiv } from "./transitions.js"
+import { firstVideo } from "./videos.js"
+
 const d = document,
 
 $start_Btn = d.querySelector(".start-btn"),
@@ -9,7 +12,6 @@ $first_Frame = d.querySelector(".first-frame"),
 $second_Frame = d.querySelector(".second-frame"),
 max = 3,
 less = 1,
-
 content = {
     1: {
         img1: "https://www.medianalisis.org/wp-content/uploads/2021/06/DESINFORMACION-Y-CENSURA.png",
@@ -25,35 +27,10 @@ content = {
     },
 }
 
-$start_Btn.addEventListener("click", e => {
-    $start_Screen.classList.add("hidden")
-    setTimeout(() => {
-        $start_Screen.classList.add("none")
-        alert("Presiona los cuadros para ver cada ensayo y cambia de sala con los controles en la parte inferior")
-    }, 500);
+d.addEventListener("DOMContentLoaded", e => {
+    firstVideo(".volume-btn", ".first-video", ".volume-div", "#start-screen")
 })
 
-$next_Btn.addEventListener("click", e => {
-    let room_Num = parseInt($room_Num.textContent)
-    if(room_Num < max){
-        $room_Num.textContent = room_Num + 1
-        $first_Frame.setAttribute("src", content[room_Num + 1].img1)
-        $second_Frame.setAttribute("src", content[room_Num + 1].img2)
-    }
-    if (room_Num == max - 1) {
-        $next_Btn.classList.add("gray")
-    }
-    $previous_Btn.classList.remove("gray")
-})
-$previous_Btn.addEventListener("click", e => {
-    let room_Num = parseInt($room_Num.textContent)
-    if(room_Num > less){
-        $room_Num.textContent = room_Num - 1
-        $first_Frame.setAttribute("src", content[room_Num - 1].img1)
-        $second_Frame.setAttribute("src", content[room_Num - 1].img2)
-    }
-    if (room_Num == less + 1) {
-        $previous_Btn.classList.add("gray")
-    }
-    $next_Btn.classList.remove("gray")
+d.addEventListener("click", e => {
+    d.querySelector("video").play()
 })
