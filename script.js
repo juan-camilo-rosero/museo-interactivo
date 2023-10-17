@@ -10,6 +10,7 @@ $next_Btn = d.querySelector(".next"),
 $room_Num = d.querySelector(".room-num"),
 $first_Frame = d.querySelector(".first-frame"),
 $second_Frame = d.querySelector(".second-frame"),
+$roomsBtn = d.querySelector(".start-btn"),
 max = 3,
 less = 1,
 content = {
@@ -29,6 +30,11 @@ content = {
 
 d.addEventListener("DOMContentLoaded", e => {
     firstVideo(".volume-btn", ".first-video", ".volume-div", "#start-screen")
+    $roomsBtn.addEventListener("click", e => {
+        dissappearDiv("#start-screen")
+        appearDiv("#rooms")
+    })
+    d.querySelector(".full-screen-img").addEventListener("click", e => alert("En el futuro funcionará"))
 })
 
 d.addEventListener("click", e => {

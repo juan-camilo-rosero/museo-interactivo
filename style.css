@@ -23,6 +23,11 @@ p::selection{
     filter: saturate(0);
 }
 
+.full-screen-img{
+    width: 100vw;
+    height: 100vh;
+}
+
 .volume-div{
     width: 100vw;
     height: 100vh;
