@@ -200,27 +200,85 @@ nav p{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .frame{
     width: 15rem;
     height: 15rem;
     cursor: pointer;
-    background-image: url(assets/icons/logo_inicio.png);
-    background-size: cover;
+    background-image: url(assets/images/frame.png);
+    background-size: contain;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .frame img{
-    width: 12.75rem;
-    height: 8.5rem;
-    margin-top: 3.25rem;
+    height: 80%;
+    width: 60%;
     filter: saturate(0);
     transition: .3s;
 }
 
 .frame img:hover{
     filter: saturate(1);
+}
+
+/*Content*/
+
+.content{
+    width: 70vw;
+    height: 65vh;
+    background-color: var(--white);
+    border: var(--black) solid 3px;
+    border-radius: 3rem;
+    position: absolute;
+    margin-top: 12vh;
+    padding: 2rem;
+    z-index: 50;
+    overflow-y: auto;
+    padding-bottom: 4rem;
+}
+
+.content h3{
+    font-size: 2.25rem;
+    text-align: center;
+    width: 75%;
+    color: var(--red);
+    margin-top: 2rem;
+    margin-left: 15%;
+}
+
+.content-text{
+    width: 75%;
+    font-size: 1.5rem;
+    color: var(--black);
+    text-align: justify;
+    margin-top: 3rem;
+    margin-left: 15%;
+}
+
+.close-content{
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: var(--red) solid 3px;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+    margin-left: 66vw;
+    cursor: pointer;
+    position: absolute;
+}
+
+.close-content p{
+    font-size: 1.2rem;
+    color: var(--red);
+    font-weight: 800;
+    text-align: center;
 }
