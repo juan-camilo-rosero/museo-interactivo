@@ -73,13 +73,20 @@ p::selection{
     margin-top: .75rem;
 }
 
-.first-video {
+.first-video, .second-video {
     position: fixed;
     left: 0;
     top: 0;
-    z-index: -1;
     width: 100%;
     transition: .3s;
+}
+
+.first-video{
+    z-index: -1;
+}
+
+.second-video{
+    z-index: 500;
 }
 
 /*Start screen*/
@@ -193,9 +200,9 @@ nav p{
 
 .frames{
     position: fixed;
-    width: 70vw;
+    width: 90vw;
     height: 45vh;
-    right: 15vw;
+    right: 5vw;
     top: 15vh;
     display: flex;
     justify-content: space-around;
@@ -204,8 +211,8 @@ nav p{
 }
 
 .frame{
-    width: 15rem;
-    height: 15rem;
+    width: 17rem;
+    height: 17rem;
     cursor: pointer;
     background-image: url(assets/images/frame.png);
     background-size: contain;

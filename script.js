@@ -1,10 +1,7 @@
 import { appearDiv, dissappearDiv } from "./transitions.js"
-import { firstVideo } from "./videos.js"
+import { firstVideo, videos_Rooms } from "./videos.js"
 
 const d = document,
-
-$start_Btn = d.querySelector(".start-btn"),
-$start_Screen = d.querySelector("#start-screen"),
 $previous_Btn = d.querySelector(".previous"),
 $next_Btn = d.querySelector(".next"),
 $room_Num = d.querySelector(".room-num"),
@@ -142,6 +139,8 @@ d.addEventListener("DOMContentLoaded", e => {
         }
         $next_Btn.classList.remove("gray")
     })
+
+    videos_Rooms(".second-video", ".next", ".room-num", ".start-btn")
 })
 
 d.querySelector(".volume-btn").addEventListener("click", e => {
