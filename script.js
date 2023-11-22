@@ -1,5 +1,5 @@
 import { appearDiv, dissappearDiv } from "./transitions.js"
-import { firstVideo, videos_Rooms } from "./videos.js"
+import { videos_Rooms } from "./videos.js"
 
 const d = document,
 $previous_Btn = d.querySelector(".previous"),
@@ -11,7 +11,8 @@ $third_Frame = d.querySelector(".third-frame"),
 $roomsBtn = d.querySelector(".start-btn"),
 $capsule_Title = d.querySelector(".content-title"),
 $capsule_Content = d.querySelector(".content-text"),
-max = 6,
+$link = d.querySelector(".room-link"),
+max = 7,
 less = 1,
 content = {
     1: {
@@ -25,12 +26,12 @@ content = {
         img3: "assets/images/CASO 2, 3.jpg"
     },
     3: {
-        img1: "assets/images/CASO 1, 1.jpg",
-        img2: "assets/images/CASO 1, 2.jpg",
-        img3: "assets/images/CASO 1, 3.jpg",
-        img4: "assets/images/CASO 1, 1.jpg",
-        img5: "assets/images/CASO 1, 2.jpg",
-        img6: "assets/images/CASO 1, 3.jpg"
+        img1: "assets/images/CASO 3, 1.jpg",
+        img2: "assets/images/CASO 3, 2.jpg",
+        img3: "assets/images/CASO 3, 3.jpg",
+        img4: "assets/images/CASO 3, 4.jpg",
+        img5: "assets/images/CASO 3, 5.jpg",
+        img6: "assets/images/CASO 3, 6.jpg"
     },
     4: {
         img1: "assets/images/CASO 4, 1.jpg",
@@ -43,6 +44,11 @@ content = {
         img3: "assets/images/CASO 5, 3.jpg"
     },
     6: {
+        img1: "assets/images/CASO 6, 1.jpg",
+        img2: "assets/images/CASO 6, 2.jpg",
+        img3: "assets/images/CASO 6, 3.jpg"
+    },
+    7: {
         img1: "assets/images/CASO 6, 1.jpg",
         img2: "assets/images/CASO 6, 2.jpg",
         img3: "assets/images/CASO 6, 3.jpg"
@@ -82,11 +88,26 @@ text_Content = {
         text2: 'El boom de lo “latino” se establece en la época de la comunicación posmasiva, y si bien esta idea de glorificar nuestra cultura por encima de cualquier obstáculo aparece en el mapa desde décadas atrás, esta idea nunca antes había sido tan influyente en la percepción del extrranjero. Diversas figuras e industrias culturales ahora han hecho que en época de turismo lleguen miles de personas a Medellín por ejemplo, con la ilusión de encontrar ese paraíso de drogas y mujeres que les han pintado.',
         text3: 'Este fenómeno resulta muy atractivo no solo para el extranjero, sino que aquí mismo gestionamos ese tipo de imagen, y se pretende exaltar ya que los latinos se han dado cuenta que esto trae cierto beneficio económico. Popularizar esta idea es problemático al generar una versión hegemónica sobre la vida del latino, pero también en esto se involucra  el sentido de identidad que estamos generando, la comunidad en torno a la fiesta como aquello que nos une y representa como latinos, y la felicidad que emana de estos territorios, puede ser algo amable de pensar, pero debe tratarse con cuidado.'
     },
+    7: {
+        text1: 'La imagen ante el mundo de los latinnos como esa tierra de la samba, el trago, el goce y las mujeres puede ser más problemático de lo que parece Si bien se presenta como una alternativa positiva, porque pareciera ser mejor que nos llamen fiesteros a narcotraficantes, la popularización de este tipo de ideas genera cambios no solo en la construcción social del país, sino que impone maneras de relacionarse con estos pueblos ante otras naciones.',
+        text2: 'El boom de lo “latino” se establece en la época de la comunicación posmasiva, y si bien esta idea de glorificar nuestra cultura por encima de cualquier obstáculo aparece en el mapa desde décadas atrás, esta idea nunca antes había sido tan influyente en la percepción del extrranjero. Diversas figuras e industrias culturales ahora han hecho que en época de turismo lleguen miles de personas a Medellín por ejemplo, con la ilusión de encontrar ese paraíso de drogas y mujeres que les han pintado.',
+        text3: 'Este fenómeno resulta muy atractivo no solo para el extranjero, sino que aquí mismo gestionamos ese tipo de imagen, y se pretende exaltar ya que los latinos se han dado cuenta que esto trae cierto beneficio económico. Popularizar esta idea es problemático al generar una versión hegemónica sobre la vida del latino, pero también en esto se involucra  el sentido de identidad que estamos generando, la comunidad en torno a la fiesta como aquello que nos une y representa como latinos, y la felicidad que emana de estos territorios, puede ser algo amable de pensar, pero debe tratarse con cuidado.'
+    }
 
-}
+},
+
+links = [
+    "https://www.portafolio-hanna.site/articulo.html?id=10",
+    "https://www.portafolio-hanna.site/articulo.html?id=11",
+    "https://view.genial.ly/651836a9572e4100114f422c/guide-galeria-latinoamerica",
+    "https://www.canva.com/design/DAFx0i1Btbc/QIThyQE4aFnI49-9tlanfw/edit",
+    "https://www.portafolio-hanna.site/articulo.html?id=12",
+    "#",
+    "#",
+    "#"
+]
 
 d.addEventListener("DOMContentLoaded", e => {
-    firstVideo(".volume-btn", ".first-video", ".volume-div", "#start-screen")
     $roomsBtn.addEventListener("click", e => {
         dissappearDiv("#start-screen")
         appearDiv("#rooms")
@@ -99,16 +120,21 @@ d.addEventListener("DOMContentLoaded", e => {
                 d.querySelectorAll(".frame")[3].classList.remove("none")
                 d.querySelectorAll(".frame")[4].classList.remove("none")
                 d.querySelectorAll(".frame")[5].classList.remove("none")
+                d.querySelector(".frames").classList.add("frames_1")
             }
             else if (room_Num === 3){
                 d.querySelectorAll(".frame")[3].classList.add("none")
                 d.querySelectorAll(".frame")[4].classList.add("none")
                 d.querySelectorAll(".frame")[5].classList.add("none")
+                d.querySelector(".frames").classList.remove("frames_1")
             }
+            else d.querySelector(".frames").classList.remove("frames_1")
             $room_Num.textContent = room_Num + 1
             $first_Frame.setAttribute("src", content[room_Num + 1].img1)
             $second_Frame.setAttribute("src", content[room_Num + 1].img2)
             $third_Frame.setAttribute("src", content[room_Num + 1].img3)
+            $link.setAttribute("href", links[room_Num])
+            console.log(room_Num);
         }
         if (room_Num == max - 1) {
             $next_Btn.classList.add("gray")
@@ -123,16 +149,20 @@ d.addEventListener("DOMContentLoaded", e => {
                 d.querySelectorAll(".frame")[3].classList.remove("none")
                 d.querySelectorAll(".frame")[4].classList.remove("none")
                 d.querySelectorAll(".frame")[5].classList.remove("none")
+                d.querySelector(".frames").classList.add("frames_1")
             }
             else if (room_Num === 3){
                 d.querySelectorAll(".frame")[3].classList.add("none")
                 d.querySelectorAll(".frame")[4].classList.add("none")
                 d.querySelectorAll(".frame")[5].classList.add("none")
+                d.querySelector(".frames").classList.remove("frames_1")
             }
+            else d.querySelector(".frames").classList.remove("frames_1")
             $room_Num.textContent = room_Num - 1
             $first_Frame.setAttribute("src", content[room_Num - 1].img1)
             $second_Frame.setAttribute("src", content[room_Num - 1].img2)
             $third_Frame.setAttribute("src", content[room_Num - 1].img3)
+            $link.setAttribute("href", links[room_Num - 2])
         }
         if (room_Num == less + 1) {
             $previous_Btn.classList.add("gray")
@@ -141,10 +171,6 @@ d.addEventListener("DOMContentLoaded", e => {
     })
 
     videos_Rooms(".second-video", ".next", ".room-num", ".start-btn")
-})
-
-d.querySelector(".volume-btn").addEventListener("click", e => {
-    d.querySelector("video").play()
 })
 
 d.querySelectorAll(".frame img").forEach((frame, frame_Num) => {

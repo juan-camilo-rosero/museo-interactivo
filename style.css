@@ -15,6 +15,10 @@ p::selection{
     color: var(--white);
 }
 
+html{
+    background-color: #7B7B7B;
+}
+
 .none{
     display: none !important;
 }
@@ -200,14 +204,23 @@ nav p{
 
 .frames{
     position: fixed;
-    width: 90vw;
+    background-color: var(--white);
     height: 45vh;
-    right: 5vw;
-    top: 15vh;
+    width: 80vw;
+    padding: 0 10vw;
+    padding-top: 15vh;
+    top: 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.frames_1{
+    background-color: rgb(63, 63, 63);
+    height: 100vh;
+    padding-top: 0;
+    left: 0;
 }
 
 .frame{
@@ -242,7 +255,7 @@ nav p{
     border: var(--black) solid 3px;
     border-radius: 3rem;
     position: absolute;
-    margin-top: 12vh;
+    margin-top: 10vh;
     padding: 2rem;
     z-index: 50;
     overflow-y: auto;
@@ -288,4 +301,27 @@ nav p{
     color: var(--red);
     font-weight: 800;
     text-align: center;
+}
+
+/*Links*/
+
+.link{
+    position: absolute;
+    bottom: 5vh;
+    right: 5vw;
+    width: 10rem;
+    cursor: pointer;
+    height: 3rem;
+    background-color: var(--white);
+    border: var(--red) solid 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.room-link{
+    color: var(--red);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
